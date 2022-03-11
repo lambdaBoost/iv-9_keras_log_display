@@ -7,6 +7,8 @@ from ssd1306_setup import WIDTH, HEIGHT, setup
 from writer import Writer
 import freesans20
 
+OPENWEATHER_KEY = '<openweather-api-key>'
+
 try:
   import usocket as socket
 except:
@@ -28,6 +30,33 @@ if wlan is None:
 print("ESP OK")
 
 while True:
+
+    
+    try:
+        w=urequests.get('https://api.openweathermap.org/data/2.5/weather?lat=57&lon=2&appid='+ OPENWEATHER_KEY)
+        temp = w.json().get('main').get('temp')-273.15
+        temp = round(temp,1)
+        temp = str(temp)
+        hum = w.json().get('main').get('humidity')
+        hum = str(hum)
+        wind = w.json().get('wind').get('speed')
+        wind = str(wind)
+        w.close()
+    except KeyError:
+        temp = 'NA'
+        hum = 'NA'
+        wind = 'NA'
+        
+    #write to oled display
+    test_display(string='temp: ' + temp)
+    sleep(30)
+    test_display(string = 'hum: ' + hum + '%')
+    sleep(30)
+    test_display(string = 'wind: ' + wind + 'm/s')
+    sleep(30)
+    
+    
+    
 #get btc price
     try:
         r = urequests.get("http://api.coindesk.com/v1/bpi/currentprice/USD.json")
@@ -38,6 +67,6 @@ while True:
         
         
     #write to oled display
-    test_display(string=rate)
-    
-    sleep(120)
+    test_display(string='BTC: ' + rate)
+    sleep(30)
+
