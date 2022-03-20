@@ -1,0 +1,240 @@
+Plot Report
+-----------
+
+Report Written:     Sunday, March 20, 2022
+Design Path:        D:\projects\numitron-clock\numitron-clock.pcb
+Design Title:       
+Created:            14/03/2022 22:14:37
+Last Saved:         20/03/2022 21:09:46
+Editing Time:       974 min
+Units:              thou (precision 0)
+
+
+Device Settings
+===============
+
+
+Gerber Settings
+===============
+
+    Leading zero suppression.
+    G01 assumed throughout.
+    Line termination <*> <CR> <LF>.
+    3.5 format absolute inches.
+    Format commands defined in Gerber file.
+    Aperture table defined in Gerber file.
+    Hardware arcs allowed.
+
+
+Drill Settings
+==============
+
+    Excellon Format 2
+    Format 3.5 absolute in inches.
+    Zero suppression Leading
+
+
+
+Plots Output
+============
+
+
+Gerber Output
+=============
+
+D:\projects\numitron-clock\numitron-clock - Top Copper.gbr
+
+    Layers:
+    --------------
+    Top Copper
+
+    D-Code Shape  (thou)
+    ---------------------------------
+    D12    Round 10.00
+    D14    Round 40.00
+    D21    Round 47.24
+    D97    Round 20.00
+    D98    Round 50.00
+    D99    Round 80.00
+    D100   Round 140.00
+    D101   Square 61.42
+    D102   Round 61.42
+    D103   Round 60.00
+    D104   Rectangle 40.55 X 73.62
+
+Gerber Output
+=============
+
+D:\projects\numitron-clock\numitron-clock - Top Copper (Resist).gbr
+
+    Layers:
+    --------------
+    Top Copper
+
+    D-Code Shape  (thou)
+    ---------------------------------
+    D72    Round 57.24
+    D105   Round 150.00
+    D106   Square 71.42
+    D107   Round 71.42
+    D108   Round 70.00
+    D109   Rectangle 50.55 X 83.62
+
+Gerber Output
+=============
+
+D:\projects\numitron-clock\numitron-clock - Top Copper (Paste).gbr
+
+    Layers:
+    --------------
+    Top Copper
+
+    D-Code Shape  (thou)
+    ---------------------------------
+    D110   Rectangle 36.55 X 69.62
+
+Gerber Output
+=============
+
+D:\projects\numitron-clock\numitron-clock - Top Silkscreen.gbr
+
+    Layers:
+    ------------------
+    Top Silkscreen
+
+    D-Code Shape  (thou)
+    -----------------------
+    D10    Round 5.00
+    D13    Round 7.87
+    D111   Round 1.00
+    D112   Round 4.00
+    D113   Round 2.00
+
+Gerber Output
+=============
+
+D:\projects\numitron-clock\numitron-clock - Bottom Copper.gbr
+
+    Layers:
+    -----------------
+    Bottom Copper
+
+    D-Code Shape  (thou)
+    ---------------------------------
+    D12    Round 10.00
+    D14    Round 40.00
+    D21    Round 47.24
+    D97    Round 20.00
+    D98    Round 50.00
+    D99    Round 80.00
+    D100   Round 140.00
+    D101   Square 61.42
+    D102   Round 61.42
+    D103   Round 60.00
+    D104   Rectangle 40.55 X 73.62
+    D114   Rectangle 25.59 X 76.77
+
+Gerber Output
+=============
+
+D:\projects\numitron-clock\numitron-clock - Bottom Copper (Resist).gbr
+
+    Layers:
+    -----------------
+    Bottom Copper
+
+    D-Code Shape  (thou)
+    ---------------------------------
+    D72    Round 57.24
+    D105   Round 150.00
+    D106   Square 71.42
+    D107   Round 71.42
+    D108   Round 70.00
+    D109   Rectangle 50.55 X 83.62
+    D115   Rectangle 35.59 X 86.77
+
+Gerber Output
+=============
+
+D:\projects\numitron-clock\numitron-clock - Bottom Copper (Paste).gbr
+
+    Layers:
+    -----------------
+    Bottom Copper
+
+    D-Code Shape  (thou)
+    ---------------------------------
+    D110   Rectangle 36.55 X 69.62
+    D116   Rectangle 21.59 X 72.77
+
+Gerber Output
+=============
+
+D:\projects\numitron-clock\numitron-clock - Bottom Silkscreen.gbr
+
+    Layers:
+    ---------------------
+    Bottom Silkscreen
+
+    D-Code Shape  (thou)
+    -----------------------
+    D10    Round 5.00
+    D11    Round 1.97
+    D13    Round 7.87
+    D117   Round 11.02
+
+Gerber Output
+=============
+
+D:\projects\numitron-clock\numitron-clock - Gerber Drill Data - [Through Hole].gbr
+
+    Layers:
+    ------------------
+    [Through Hole]
+
+    D-Code Shape  (thou)
+    -----------------------
+    D77    Round 24.00
+    D79    Round 35.00
+    D83    Round 31.50
+    D118   Round 120.00
+    D119   Round 40.94
+
+NC Drill Output
+===============
+
+D:\projects\numitron-clock\numitron-clock - NC Drill Data - [Through Hole].drl
+
+    Output:
+    -----------------------------
+    Plated Round Drill Holes
+    Unplated Round Drill Holes
+    Plated Slots
+    Unplated Slots
+
+    Tool  Size           Count   ID
+    --------------------------------------
+    T001  0.02400 inches 149   F
+    T002  0.03150 inches 2     S
+    T003  0.03500 inches 70    V
+    T004  0.04094 inches 38    AD
+    T005  0.12000 inches 4     AC
+    --------------------------------------
+    Total                263
+    --------------------------------------
+
+
+Gerber Output
+=============
+
+D:\projects\numitron-clock\numitron-clock - Outline.gbr
+
+    Layers:
+    ------------------
+    Board Outlines
+
+    D-Code Shape  (thou)
+    -----------------------
+    D84    Round 12.00
+
+End Of Report.

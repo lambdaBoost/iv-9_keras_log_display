@@ -7,7 +7,7 @@ from ssd1306_setup import WIDTH, HEIGHT, setup
 from writer import Writer
 import freesans20
 
-OPENWEATHER_KEY = '<openweather-api-key>'
+OPENWEATHER_KEY = '8932c4ca99cb1ffb7c95a7bd51c9ce2a'
 
 try:
   import usocket as socket

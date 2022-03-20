@@ -1,0 +1,16 @@
+Transfer from Schematic to PCB.
+-------------------------------
+
+Report Written:     Monday, March 14, 2022
+Design Path:        D:\projects\numitron-clock\numitron-clock.pcb
+Design Title:       
+Created:            14/03/2022 22:14:37
+Last Saved:         14/03/2022 22:14:52
+Editing Time:       0 min
+Units:              thou (precision 0)
+
+Net class "Ground" was not defined, but has been created. Please check the values in the PCB design.
+Net class "Power" was not defined, but has been created. Please check the values in the PCB design.
+Net class "Signal" was not defined, but has been created. Please check the values in the PCB design.
+
+End Of Report.

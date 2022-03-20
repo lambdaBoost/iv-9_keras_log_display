@@ -1,0 +1,33 @@
+Forward Design Changes Report
+-----------------------------
+
+Report Written:     Sunday, March 20, 2022
+Design Path:        D:\projects\numitron-clock\numitron-clock.pcb
+Design Title:       
+Created:            14/03/2022 22:14:37
+Last Saved:         15/03/2022 23:04:13
+Editing Time:       932 min
+Units:              thou (precision 0)
+
+Added component reference "C1" of component "VJ1206A101JXXPW1BC", package "CAPC3216X170N".
+Added component reference "C2" of component "VJ1206A101JXXPW1BC", package "CAPC3216X170N".
+Added component reference "C3" of component "VJ1206A101JXXPW1BC", package "CAPC3216X170N".
+Added component reference "C4" of component "VJ1206A101JXXPW1BC", package "CAPC3216X170N".
+Added component reference "C5" of component "VJ1206A101JXXPW1BC", package "CAPC3216X170N".
+Added component reference "C6" of component "VJ1206A101JXXPW1BC", package "CAPC3216X170N".
+
+Connected pin "C1.1" to net "VCC".
+Connected pin "C1.2" to net "GND".
+Connected pin "C2.1" to net "VCC".
+Connected pin "C2.2" to net "GND".
+Connected pin "C3.1" to net "VCC".
+Connected pin "C3.2" to net "GND".
+Connected pin "C4.1" to net "VCC".
+Connected pin "C4.2" to net "GND".
+Connected pin "C5.1" to net "VCC".
+Connected pin "C5.2" to net "GND".
+Connected pin "C6.1" to net "VCC".
+Connected pin "C6.2" to net "GND".
+
+
+End Of Report.
