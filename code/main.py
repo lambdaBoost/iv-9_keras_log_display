@@ -6,8 +6,10 @@ from screen_test2 import test_display
 from ssd1306_setup import WIDTH, HEIGHT, setup
 from writer import Writer
 import freesans20
+from remoteMonitor import get_training_logs
 
-OPENWEATHER_KEY = '8932c4ca99cb1ffb7c95a7bd51c9ce2a'
+REMOTEMONITOR_ENDPOINT = 'API-ENDPOINT'
+OPENWEATHER_KEY = '<OPENWEATHER-KEY'
 
 try:
   import usocket as socket
@@ -30,33 +32,36 @@ if wlan is None:
 print("ESP OK")
 
 while True:
-
     
     try:
-        w=urequests.get('https://api.openweathermap.org/data/2.5/weather?lat=57&lon=2&appid='+ OPENWEATHER_KEY)
-        temp = w.json().get('main').get('temp')-273.15
-        temp = round(temp,1)
-        temp = str(temp)
-        hum = w.json().get('main').get('humidity')
-        hum = str(hum)
-        wind = w.json().get('wind').get('speed')
-        wind = str(wind)
-        w.close()
-    except KeyError:
-        temp = 'NA'
-        hum = 'NA'
-        wind = 'NA'
+        get_training_logs(REMOTEMONITOR_ENDPOINT)
         
-    #write to oled display
-    test_display(string='temp: ' + temp)
-    sleep(30)
-    test_display(string = 'hum: ' + hum + '%')
-    sleep(30)
-    test_display(string = 'wind: ' + wind + 'm/s')
-    sleep(30)
+    except:
+    
+        try:
+            w=urequests.get('https://api.openweathermap.org/data/2.5/weather?lat=57&lon=2&appid='+ OPENWEATHER_KEY)
+            temp = w.json().get('main').get('temp')-273.15
+            temp = round(temp,1)
+            temp = str(temp)
+            hum = w.json().get('main').get('humidity')
+            hum = str(hum)
+            wind = w.json().get('wind').get('speed')
+            wind = str(wind)
+            w.close()
+            #write to oled display
+            test_display(string='temp: ' + temp)
+            sleep(10)
+            test_display(string = 'hum: ' + hum + '%')
+            sleep(10)
+            test_display(string = 'wind: ' + wind + 'm/s')
+            sleep(10)
+        except KeyError:
+            test_display(string = 'no_con')
+        
+        
     
     
-    
+"""    
 #get btc price
     try:
         r = urequests.get("http://api.coindesk.com/v1/bpi/currentprice/USD.json")
@@ -69,4 +74,4 @@ while True:
     #write to oled display
     test_display(string='BTC: ' + rate)
     sleep(30)
-
+"""
