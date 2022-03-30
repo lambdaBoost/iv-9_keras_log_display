@@ -6,10 +6,10 @@ from screen_test2 import test_display
 from ssd1306_setup import WIDTH, HEIGHT, setup
 from writer import Writer
 import freesans20
-from remoteMonitor import get_training_logs
+from remoteMonitor import get_training_logs, get_weather_data
 
-REMOTEMONITOR_ENDPOINT = 'API-ENDPOINT'
-OPENWEATHER_KEY = '<OPENWEATHER-KEY'
+REMOTEMONITOR_ENDPOINT = 'http://192.168.1.217/publish/epoch/end'
+OPENWEATHER_KEY = ''
 
 try:
   import usocket as socket
@@ -36,29 +36,21 @@ while True:
     try:
         get_training_logs(REMOTEMONITOR_ENDPOINT)
         
-    except:
+    except AssertionError:
     
         try:
-            w=urequests.get('https://api.openweathermap.org/data/2.5/weather?lat=57&lon=2&appid='+ OPENWEATHER_KEY)
-            temp = w.json().get('main').get('temp')-273.15
-            temp = round(temp,1)
-            temp = str(temp)
-            hum = w.json().get('main').get('humidity')
-            hum = str(hum)
-            wind = w.json().get('wind').get('speed')
-            wind = str(wind)
-            w.close()
-            #write to oled display
-            test_display(string='temp: ' + temp)
-            sleep(10)
-            test_display(string = 'hum: ' + hum + '%')
-            sleep(10)
-            test_display(string = 'wind: ' + wind + 'm/s')
-            sleep(10)
-        except KeyError:
-            test_display(string = 'no_con')
+            get_weather_data(OPENWEATHER_KEY)
+            
+        #TODO blind except - not exactly great but honestly probably best here for now 
+        except:
+            
+            test_display(string = 'no api con')
+            sleep(30)
+            
+    except:
         
-        
+        test_display(string = 'pi offline')
+        sleep(30)
     
     
 """    
