@@ -15,19 +15,30 @@ def display_digit(num, dp, shift_reg):
     
     d = {0:0b11111100,
              1:0b00001100,
-             2:0b11011010}
+             2:0b11011010,
+             8:0b11111110,
+             'blank':0b00000000}
     
     shift_reg.bits(d[num],8)
     shift_reg.latch()
 
 
 while True:
-    display_digit(0,False,sr)
+    display_digit(8,False,sr)
     sleep(1)
-    display_digit(1,False,sr)
+    display_digit('blank',False,sr)
     sleep(1)
-    display_digit(2,False,sr)
+    display_digit('blank',False,sr)
     sleep(1)
+    display_digit('blank',False,sr)
+    sleep(1)
+    display_digit('blank',False,sr)
+    sleep(1)
+    display_digit('blank',False,sr)
+    sleep(1)
+    display_digit('blank',False,sr)
+    sleep(1)
+
     
 
 
