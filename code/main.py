@@ -8,7 +8,7 @@ from writer import Writer
 import freesans20
 from remoteMonitor import get_training_logs, get_weather_data
 
-REMOTEMONITOR_ENDPOINT = 'http://192.168.1.217/publish/epoch/end'
+REMOTEMONITOR_ENDPOINT = 'http://192.168.1.215/publish/epoch/end'
 OPENWEATHER_KEY = ''
 
 try:
@@ -16,11 +16,6 @@ try:
 except:
   import socket
 
-s1 = machine.Pin(2, machine.Pin.OUT)
-s2 = machine.Pin(0, machine.Pin.OUT)
-
-s1.value(1)
-s2.value(1)
 
 wlan = wifimgr.get_connection()
 if wlan is None:
