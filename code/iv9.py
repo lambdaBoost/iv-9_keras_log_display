@@ -41,7 +41,9 @@ shift_reg - shift register object from sr_74hc595 library
         
         shift_reg.bits(val,8)
         
-        if num_list != ['blank']*6:
+        if num_list == ['blank']*6:
+            sleep(0.5)
+        else:
             sleep(1)
         
         i=i+1
