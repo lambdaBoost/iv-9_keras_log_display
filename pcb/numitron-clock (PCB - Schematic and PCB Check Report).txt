@@ -1,0 +1,17 @@
+Schematic and PCB Check Report
+------------------------------
+
+Report Written:     Monday, April 18, 2022
+Design Path:        D:\projects\numitron-clock\pcb\numitron-clock.pcb
+Design Title:       
+Created:            14/03/2022 23:14:37
+Last Saved:         17/04/2022 21:33:11
+Editing Time:       4295 min
+Units:              thou (precision 0)
+
+
+Checking integrity of Schematic "D:\projects\numitron-clock\pcb\numitron-clock.sch" with PCB "D:\projects\numitron-clock\pcb\numitron-clock.pcb"
+================================================================================================================================================
+
+
+End Of Report.

@@ -1,0 +1,27 @@
+Forward Design Changes Report
+-----------------------------
+
+Report Written:     Monday, April 18, 2022
+Design Path:        D:\projects\numitron-clock\pcb\numitron-clock.pcb
+Design Title:       
+Created:            14/03/2022 23:14:37
+Last Saved:         17/04/2022 21:33:11
+Editing Time:       4295 min
+Units:              thou (precision 0)
+
+Disconnected pin "U2.P$1" from net "GND".
+Disconnected pin "U3.P$1" from net "GND".
+Disconnected pin "U4.P$1" from net "GND".
+Disconnected pin "U5.P$1" from net "GND".
+Disconnected pin "U6.P$1" from net "GND".
+Disconnected pin "U7.P$1" from net "GND".
+
+Connected pin "U2.P$1" to net "VCC".
+Connected pin "U3.P$1" to net "VCC".
+Connected pin "U4.P$1" to net "VCC".
+Connected pin "U5.P$1" to net "VCC".
+Connected pin "U6.P$1" to net "VCC".
+Connected pin "U7.P$1" to net "VCC".
+
+
+End Of Report.
