@@ -3,6 +3,7 @@ from sr_74hc595_bitbang import SR
 from time import sleep
 
 """
+#for testing
 ser = Pin(16, Pin.OUT)
 rclk = Pin(15, Pin.OUT)
 srclk = Pin(2, Pin.OUT)
@@ -15,13 +16,14 @@ sr = SR(ser, srclk, rclk, srclr, oe)
 
 def display_digits(num_list, dp, shift_reg):
 
-displays a list of digits to numitron. Arguments:
+    """
+    displays a list of digits to numitron. Arguments:
 
-num_list - list of single digits to display
-dp - index of dp
-shift_reg - shift register object from sr_74hc595 library
+    num_list - list of single digits to display
+    dp - index of dp
+    shift_reg - shift register object from sr_74hc595 library
 
-"""
+    """
     
     d = {0:0b11111100,
              1:0b00001100,
@@ -62,7 +64,7 @@ shift_reg - shift register object from sr_74hc595 library
 
 def display_digits_slow(num_list, dp, shift_reg):
     """as above but ramps up current more gradually
-"""
+    """
     
     d = {0:0b11111100,
              1:0b00001100,
@@ -108,6 +110,6 @@ def display_digits_slow(num_list, dp, shift_reg):
         sleep(0.5)
 
 
-
+#display_digits_slow([1,2,3,4,5,6],1,sr)
 
   
