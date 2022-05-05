@@ -11,9 +11,10 @@ oe = Pin(0, Pin.OUT, value=0)    # low enables output
 srclr = Pin(32, Pin.OUT, value=1) # pulsing low clears data
 
 sr = SR(ser, srclk, rclk, srclr, oe)
+"""
 
 def display_digits(num_list, dp, shift_reg):
-    """
+
 displays a list of digits to numitron. Arguments:
 
 num_list - list of single digits to display
