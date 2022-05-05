@@ -8,7 +8,7 @@ from writer import Writer
 import freesans20
 from remoteMonitor import get_training_logs, get_weather_data
 
-REMOTEMONITOR_ENDPOINT = 'http://192.168.1.215/publish/epoch/end'
+REMOTEMONITOR_ENDPOINT = 'http://192.168.1.217/publish/epoch/end'
 OPENWEATHER_KEY = ''
 
 try:

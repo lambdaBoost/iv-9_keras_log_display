@@ -11,7 +11,7 @@ import urequests
 from screen_test2 import test_display
 from ssd1306_setup import WIDTH, HEIGHT, setup
 from writer import Writer
-from iv9 import display_digits
+from iv9 import display_digits_slow
 import freesans20
 from machine import Pin
 from sr_74hc595_bitbang import SR
@@ -35,7 +35,9 @@ sr = SR(ser, srclk, rclk, srclr, oe)
 
 def get_training_logs(endpoint):
     
-    
+    #oe.value(1)
+    display_digits_slow(['blank']*6, 10, sr)
+    #oe.value(0)
 
     w=urequests.get(endpoint)
     log_list = w.json()
@@ -62,19 +64,27 @@ def get_training_logs(endpoint):
     test_display(string='epoch' + '/' + str(total_epochs ))
     #display on numitrons
     #clear display
-    display_digits(['blank']*6, 10, sr)
-    display_digits(epoch_list, 10, sr)
+    #oe.value(1)
+    display_digits_slow(['blank']*6, 10, sr)
+    #oe.value(0)
+    display_digits_slow(epoch_list, 10, sr)
     
     sleep(10)
     
     test_display(string='loss: ')
     #clear display
-    display_digits(['blank']*6, 10, sr)
-    display_digits(loss_list, 4, sr)
+    #oe.value(1)
+    display_digits_slow(['blank']*6, 10, sr)
+    #oe.value(0)
+    display_digits_slow(loss_list, 4, sr)
     sleep(10)
 
 
 def get_weather_data(key):
+    
+    #oe.value(1)
+    display_digits_slow(['blank']*6, 10, sr)
+    #oe.value(0)
     
     w=urequests.get('https://api.openweathermap.org/data/2.5/weather?lat=57&lon=2&appid='+ key)
     temp = w.json().get('main').get('temp')-273.15
@@ -94,24 +104,30 @@ def get_weather_data(key):
     
     print(temp_list)
     #clear display
-    display_digits(['blank']*6, 10, sr)
+    #oe.value(1)
+    display_digits_slow(['blank']*6, 10, sr)
+    #oe.value(0)
     
     #write to oled display
     test_display(string='temp')
     #display to numitrons
-    display_digits(temp_list, 1, sr)
+    display_digits_slow(temp_list, 1, sr)
     sleep(30)
     
     
     #clear display
-    display_digits(['blank']*6, 10, sr)
+    #oe.value(1)
+    display_digits_slow(['blank']*6, 10, sr)
+    #oe.value(0)
     test_display(string = 'hum')
-    display_digits(hum_list, 10, sr)
+    display_digits_slow(hum_list, 10, sr)
     sleep(30)
     
-    display_digits(['blank']*6, 10, sr)
+    #oe.value(1)
+    display_digits_slow(['blank']*6, 10, sr)
+    #oe.value(0)
     test_display(string = 'wind')
-    display_digits(wind_list, 1, sr)
+    display_digits_slow(wind_list, 1, sr)
     sleep(30)
     
     
