@@ -111,7 +111,7 @@ def get_weather_data(key):
     #write to oled display
     test_display(string='temp')
     #display to numitrons
-    display_digits_slow(temp_list, 1, sr)
+    display_digits_slow(temp_list, len(temp_list)-1, sr)
     sleep(30)
     
     
@@ -127,7 +127,7 @@ def get_weather_data(key):
     display_digits_slow(['blank']*6, 10, sr)
     #oe.value(0)
     test_display(string = 'wind')
-    display_digits_slow(wind_list, 1, sr)
+    display_digits_slow(wind_list, len(wind_list)-1, sr)
     sleep(30)
     
     
