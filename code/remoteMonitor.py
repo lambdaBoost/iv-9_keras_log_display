@@ -8,6 +8,7 @@ import wifimgr
 from time import sleep
 import machine
 import urequests
+from screen_test import draw_tank
 from screen_test2 import test_display
 from ssd1306_setup import WIDTH, HEIGHT, setup
 from writer import Writer
@@ -151,30 +152,35 @@ def get_vehicle_losses(endpoint):
     
     lst = [int(x) for x in str(total)]
     test_display(string='total')
+    draw_tank()
     #display to numitrons
     display_digits_slow(lst, 10, sr)
     sleep(30)
     
     lst = [int(x) for x in str(destroyed)]
     test_display(string='destroyed')
+    draw_tank()
     #display to numitrons
     display_digits_slow(lst, 10, sr)
     sleep(30)
     
     lst = [int(x) for x in str(damaged)]
     test_display(string='damaged')
+    draw_tank()
     #display to numitrons
     display_digits_slow(lst, 10, sr)
     sleep(30)
     
     lst = [int(x) for x in str(abandoned)]
     test_display(string='abandoned')
+    draw_tank()
     #display to numitrons
     display_digits_slow(lst, 10, sr)
     sleep(30)
     
     lst = [int(x) for x in str(captured)]
     test_display(string='captured')
+    draw_tank()
     #display to numitrons
     display_digits_slow(lst, 10, sr)
     sleep(30)
