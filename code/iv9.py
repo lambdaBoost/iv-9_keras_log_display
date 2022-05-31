@@ -77,7 +77,8 @@ def display_digits_slow(num_list, dp, shift_reg):
              8:0b11111110,
              9:0b11110110,
              0:0b11111100,
-             'blank':0b00000000}
+             'blank':0b00000000,
+             '-', 0b0000010}
     
     #reverse the list so least sig digit is displayed first
     num_list.reverse()

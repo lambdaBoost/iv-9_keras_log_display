@@ -90,7 +90,7 @@ def get_weather_data(key, lat, lon):
     w=urequests.get('https://api.openweathermap.org/data/2.5/weather?lat=' +str(lat) +' &lon=' + str(lon) +'&appid='+ key)
     temp = w.json().get('main').get('temp')-273.15
     temp = round(temp,1)
-    temp = int(temp*10)
+    abs_temp = abs(int(temp*10))
     hum = w.json().get('main').get('humidity')
     hum = int(round(hum))
     wind = w.json().get('wind').get('speed')
@@ -99,9 +99,13 @@ def get_weather_data(key, lat, lon):
     w.close()
     
     #get digits
-    temp_list = [int(x) for x in str(temp)]
+    temp_list = [int(x) for x in str(abs_temp)]
     hum_list = [int(x) for x in str(hum)]
     wind_list = [int(x) for x in str(wind)]
+    
+    #handle negative values
+    if temp<0:
+        temp_list.insert(0,'-')
     
     print(temp_list)
     #clear display
