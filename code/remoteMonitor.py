@@ -175,7 +175,7 @@ def get_vehicle_losses(endpoint):
     sleep(30)
     
     lst = [int(x) for x in str(captured)]
-    test_display(string='captured', tank=True)
+    test_display(string='captured', tank=True, tractor = True)
     #display to numitrons
     display_digits_slow(lst, 10, sr)
     sleep(30)
