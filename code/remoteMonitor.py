@@ -151,36 +151,31 @@ def get_vehicle_losses(endpoint):
     
     
     lst = [int(x) for x in str(total)]
-    test_display(string='total')
-    draw_tank()
+    test_display(string='total', tank=True)
     #display to numitrons
     display_digits_slow(lst, 10, sr)
     sleep(30)
     
     lst = [int(x) for x in str(destroyed)]
-    test_display(string='destroyed')
-    draw_tank()
+    test_display(string='destroyed', tank=True)
     #display to numitrons
     display_digits_slow(lst, 10, sr)
     sleep(30)
     
     lst = [int(x) for x in str(damaged)]
-    test_display(string='damaged')
-    draw_tank()
+    test_display(string='damaged', tank=True)
     #display to numitrons
     display_digits_slow(lst, 10, sr)
     sleep(30)
     
     lst = [int(x) for x in str(abandoned)]
-    test_display(string='abandoned')
-    draw_tank()
+    test_display(string='abandoned', tank=True)
     #display to numitrons
     display_digits_slow(lst, 10, sr)
     sleep(30)
     
     lst = [int(x) for x in str(captured)]
-    test_display(string='captured')
-    draw_tank()
+    test_display(string='captured', tank=True)
     #display to numitrons
     display_digits_slow(lst, 10, sr)
     sleep(30)

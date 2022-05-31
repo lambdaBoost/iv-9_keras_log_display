@@ -8,7 +8,25 @@ from writer import Writer
 # Font
 import freesans20
 
-def test_display(use_spi=False, string='test'):
+
+def draw_tank(ssd, rhs):
+    
+    ssd.line(126,30,111,30,1)
+    ssd.line(127,29,127,28,1)
+    ssd.line(110,29,110,28,1)
+    ssd.line(126,27,111,27,1)
+    ssd.fill_rect(112, 26, 13, 2, 1)
+    ssd.fill_rect(117, 23, 6, 3, 1)
+    ssd.line(116,24,103,24,1)
+    
+    ssd.fill_rect(124, 28, 2,2, 1)
+    ssd.fill_rect(121, 28, 2,2, 1)
+    ssd.fill_rect(118, 28, 2,2, 1)
+    ssd.fill_rect(115, 28, 2,2, 1)
+    ssd.fill_rect(112, 28, 2,2, 1)
+
+
+def test_display(use_spi=False, string='test', tank=False):
     ssd = setup(use_spi)  # Create a display instance
     rhs = WIDTH -1
     #ssd.line(rhs - 20, 0, rhs, 20, 1)
@@ -18,6 +36,10 @@ def test_display(use_spi=False, string='test'):
     wri = Writer(ssd, freesans20)
     Writer.set_textpos(ssd, 10, 0)  # verbose = False to suppress console output
     wri.printstring(string)
+    
+    if(tank):
+        draw_tank(ssd,rhs)
+    
     ssd.show()
     
 #test_display()
