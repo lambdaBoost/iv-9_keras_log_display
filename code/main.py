@@ -6,10 +6,13 @@ from screen_test2 import test_display
 from ssd1306_setup import WIDTH, HEIGHT, setup
 from writer import Writer
 import freesans20
-from remoteMonitor import get_training_logs, get_weather_data
+from remoteMonitor import get_training_logs, get_weather_data, get_vehicle_losses
 
 REMOTEMONITOR_ENDPOINT = 'http://192.168.1.217/publish/epoch/end'
+VEHICLE_LOSS_ENDPOINT = 'http://192.168.1.217:8080/items/'
 OPENWEATHER_KEY = ''
+LAT = 57
+LON = 2
 
 try:
   import usocket as socket
@@ -34,7 +37,8 @@ while True:
     except AssertionError:
     
         try:
-            get_weather_data(OPENWEATHER_KEY)
+            #get_weather_data(OPENWEATHER_KEY, LAT, LON)
+            get_vehicle_losses(VEHICLE_LOSS_ENDPOINT)
             
         #TODO blind except - not exactly great but honestly probably best here for now 
         except:

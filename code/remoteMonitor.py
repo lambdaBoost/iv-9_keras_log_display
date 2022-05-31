@@ -80,13 +80,13 @@ def get_training_logs(endpoint):
     sleep(10)
 
 
-def get_weather_data(key):
+def get_weather_data(key, lat, lon):
     
     #oe.value(1)
     display_digits_slow(['blank']*6, 10, sr)
     #oe.value(0)
     
-    w=urequests.get('https://api.openweathermap.org/data/2.5/weather?lat=57&lon=2&appid='+ key)
+    w=urequests.get('https://api.openweathermap.org/data/2.5/weather?lat=' +str(lat) +' &lon=' + str(lon) +'&appid='+ key)
     temp = w.json().get('main').get('temp')-273.15
     temp = round(temp,1)
     temp = int(temp*10)
@@ -130,5 +130,53 @@ def get_weather_data(key):
     display_digits_slow(wind_list, len(wind_list)-1, sr)
     sleep(30)
     
+    
+
+def get_vehicle_losses(endpoint):
+    
+    #oryx vehicle losses
+    
+    
+    display_digits_slow(['blank']*6, 10, sr)
+    w=urequests.get(endpoint)
+    response = w.text
+    response = response.replace("\"","")
+    response = response.split(',')
+    total = response[0]
+    destroyed = response[1]
+    damaged = response[2]
+    abandoned = response[3]
+    captured = response[4]
+    
+    
+    lst = [int(x) for x in str(total)]
+    test_display(string='total')
+    #display to numitrons
+    display_digits_slow(lst, 10, sr)
+    sleep(30)
+    
+    lst = [int(x) for x in str(destroyed)]
+    test_display(string='destroyed')
+    #display to numitrons
+    display_digits_slow(lst, 10, sr)
+    sleep(30)
+    
+    lst = [int(x) for x in str(damaged)]
+    test_display(string='damaged')
+    #display to numitrons
+    display_digits_slow(lst, 10, sr)
+    sleep(30)
+    
+    lst = [int(x) for x in str(abandoned)]
+    test_display(string='abandoned')
+    #display to numitrons
+    display_digits_slow(lst, 10, sr)
+    sleep(30)
+    
+    lst = [int(x) for x in str(captured)]
+    test_display(string='captured')
+    #display to numitrons
+    display_digits_slow(lst, 10, sr)
+    sleep(30)
     
     
