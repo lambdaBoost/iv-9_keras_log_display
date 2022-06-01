@@ -29,6 +29,8 @@ if wlan is None:
 # Main Code goes here, wlan is a working network.WLAN(STA_IF) instance.
 print("ESP OK")
 
+i = 0
+
 while True:
     
     try:
@@ -50,9 +52,11 @@ while True:
         
         test_display(string = 'pi offline')
         sleep(30)
+        
+    i = i+1
     
     #hard reset every 30 minutes
-    if time.ticks_ms() > 1800000:
+    if i > 9:
         machine.reset()
     
 """    
