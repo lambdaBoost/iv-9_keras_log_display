@@ -51,6 +51,9 @@ while True:
         test_display(string = 'pi offline')
         sleep(30)
     
+    #hard reset every 30 minutes
+    if time.ticks_ms() > 1800000:
+        machine.reset()
     
 """    
 #get btc price
