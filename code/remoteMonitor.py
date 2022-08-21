@@ -77,7 +77,7 @@ def get_training_logs(endpoint):
     #oe.value(1)
     display_digits_slow(['blank']*6, 10, sr)
     #oe.value(0)
-    display_digits_slow(loss_list, 4, sr)
+    display_digits_slow(loss_list, 1, sr)
     sleep(10)
 
 
@@ -87,7 +87,7 @@ def get_weather_data(key, lat, lon):
     display_digits_slow(['blank']*6, 10, sr)
     #oe.value(0)
     
-    w=urequests.get('https://api.openweathermap.org/data/2.5/weather?lat=' +str(lat) +' &lon=' + str(lon) +'&appid='+ key)
+    w=urequests.get('https://api.openweathermap.org/data/2.5/weather?lat=' +str(lat) +'&lon=' + str(lon) +'&appid='+ key)
     temp = w.json().get('main').get('temp')-273.15
     temp = round(temp,1)
     abs_temp = abs(int(temp*10))
