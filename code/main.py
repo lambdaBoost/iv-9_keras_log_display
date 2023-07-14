@@ -6,13 +6,10 @@ from screen_test2 import test_display
 from ssd1306_setup import WIDTH, HEIGHT, setup
 from writer import Writer
 import freesans20
-from remoteMonitor import get_training_logs, get_weather_data, get_vehicle_losses
+from remoteMonitor import get_subscribers
 
-REMOTEMONITOR_ENDPOINT = 'http://192.168.1.217/publish/epoch/end'
-VEHICLE_LOSS_ENDPOINT = 'http://192.168.1.217:8080/items/'
-OPENWEATHER_KEY = ''
-LAT = 57
-LON = 2
+api_key = '<key here>'
+channel_id = '<channel id here>'
 
 try:
   import usocket as socket
@@ -29,28 +26,20 @@ if wlan is None:
 # Main Code goes here, wlan is a working network.WLAN(STA_IF) instance.
 print("ESP OK")
 
+test_display()
+
 i = 0
 
 while True:
     
     try:
-        get_training_logs(REMOTEMONITOR_ENDPOINT)
+        test_display(string = 'subs')
+        get_subscribers(api_key, channel_id)
         
-    except AssertionError:
-    
-        try:
-            #get_weather_data(OPENWEATHER_KEY, LAT, LON)
-            get_vehicle_losses(VEHICLE_LOSS_ENDPOINT)
-            
-        #TODO blind except - not exactly great but honestly probably best here for now 
-        except:
-            
-            test_display(string = 'no api con')
-            sleep(30)
-            
+               
     except:
         
-        test_display(string = 'pi offline')
+        #test_display(string = 'api offline')
         sleep(30)
         
     i = i+1
@@ -58,18 +47,3 @@ while True:
     #hard reset every 30 minutes
     if i > 9:
         machine.reset()
-    
-"""    
-#get btc price
-    try:
-        r = urequests.get("http://api.coindesk.com/v1/bpi/currentprice/USD.json")
-        rate = '%d' % r.json()['bpi']['USD']['rate_float']
-        r.close()
-    except KeyError:
-        rate = "0"
-        
-        
-    #write to oled display
-    test_display(string='BTC: ' + rate)
-    sleep(30)
-"""

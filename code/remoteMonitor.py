@@ -184,4 +184,13 @@ def get_vehicle_losses(endpoint):
     display_digits_slow(lst, 10, sr)
     sleep(30)
     
+def get_subscribers(api_key, channel_id):
+    print('getting subscriber count')
+    url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id=' + channel_id +'&fields=items/statistics/subscriberCount&key=' + api_key
+    response = urequests.get(url)
+    subs_str = response.json()['items'][0]['statistics']['subscriberCount']
+    #test_display('subs')
     
+    lst = [int(x) for x in subs_str]
+    display_digits_slow(lst, 10, sr)
+    sleep(60)
